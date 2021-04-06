@@ -43,6 +43,11 @@ body {
 	margin: auto; */
 } 
 
+img {
+	width: 100%;
+	display: block;
+}
+
 h1 {
 	font-size: 52px;
 	margin-top: 0;
@@ -103,30 +108,38 @@ a:hover {
 	/* padding: 10px 15px; */
 }
 
-/* ------------------------ hero sekce --------------------------------- */
+/* ------------------------ hero sekce --------------------------------- 
 .hero {
-	/* background-size: cover; */
-	color: white;
-	background-image: url("images/cupcake.jpg"); /* OBRAZEK NESEDÍ TAK, JAK BY MĚL */
+	background-size: cover;
+	background-image: url("images/cupcake.jpg"); /* OBRAZEK NESEDÍ TAK, JAK BY MĚL 
 	background-repeat: no-repeat;
-	background-size: 100%;
-	background-position: center;
-	/* margin:auto;
+	margin:auto;
 	padding-top: 30px;
-	padding-bottom: 30px; */
+	padding-bottom: 30px;
 }
 
-.hero .box {
-	display: flex;
-	padding: 50px;
-
-}
 .hero-text {
-	padding-right: 50%;
+	width: 60%;
+	padding-right: 40%;
 	color: white;
 	width: 1100px;
 	margin:0 auto;
+}*/
+/* ------------------------ hero sekce - 2 --------------------------------- */
+
+.kontejner.hero {
+	color: white;
+	background-image: url("images/cupcake.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
 }
+	
+
+.hero .box {
+	display: flex;
+}
+
 
 /* ------------------------ VÍTEJTE sekce --------------------------------- */
 
@@ -136,8 +149,6 @@ a:hover {
 }
 
 .box {
-	/* display: flex;
-	justify-content: space-between; */
 	max-width: 1100px;	
 	margin: 0 auto;
 }
@@ -145,84 +156,72 @@ a:hover {
 .welcome .box {
 	background-color: white;
 	display: flex;
-	padding-bottom: -5px;
 }
 
 .sloupec {
 	flex-basis: 50%;
 }
 
-.pravy {
-	padding: 0 0 0 30px;
-	flex-basis: 50%;
+.sloupec.levy {
+	padding-left: 15px;
 }
 
- .sloupec .pravy img {   /* nemůžu se zbavit bílého okraje dole - zkoušela jsem to horem dolem*/
-	/* padding: 5px 10px 0 0; */
-	width: 100%;
-	display: block;
-}
-
-.levy {
+.sloupec.pravy {
 	padding-left: 30px;
-	flex-basis: 50%;
 }
+
+.sloupec.pravy img { 
+	padding: 4px 8px 4px 0px;
+	border-radius: 2%;
+}
+
+
 .tlacitko {
 	background-color:#f195b2;
+	border: #f195b2;
 	padding: 15px 40px;
 	border-radius: 30px;
-	border-color: transparent;
+	color: white;
 	text-align: center;
 	margin-bottom: 20px;
 }
 
- .tlacitko a {  /* NEFUNGUJE, JAK MÁ... 
-	display: block; */
+ .tlacitko a {  /* NEFUNGUJE, JAK MÁ... */
+	/* display: block; */
 	padding: 0;
 	color: white;
 } 
 
-.tlacitko a:hover {  /*  tlačítko se nezabarvuje celé - PROČ ???? */
+.tlacitko a:hover {
 	background-color: #d2567d;
-	
 }
 /* ------------------------- DNEŠNÍ NABÍDKA sekce -----------------------------*/
 .nabidka {
 	background-color: #f0f0f0;
-	/* width: 1100px;  */
 	display: flex;
 	flex-basis: 100%;
 	flex-wrap: wrap;
 }
-.box {
-	display: block;
+
+.nabidka .text {
+	margin-left: 15px;
 }
 
-/* .nabidka .text{
-	margin-left: 15px;
-}  */
-
-.nabidka .karta { /* proč se to nesmrskne k sobě? */
+.nabidka .karta { /* spatne rozložené karty */
 	display: flex;
-	flex-direction: row;
-	flex-basis: 23%;
 	justify-content: space-between;
-	align-items: flex-start;
-	/* box-shadow: 3px; */
+	box-shadow: 3px;
 	flex-grow: 0;
-	flex-shrink: 1;
-	flex-wrap: nowrap;
+	
 }
 .obsahkarty {
-	display:flex;
-	flex-wrap: wrap; 
-	margin:0 15px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0px 15px;
+	/*flex-basis: calc(25% - (((4 - 1)*30px)/4));*/
 }
 
 .obsahkarty img {
-	/* display: flex;
-	width: 100%;
-	flex-wrap: wrap; */
 	border-radius: 10px 10px 0 0;
 }
 
@@ -232,49 +231,42 @@ a:hover {
 	display: block;
 	border-radius: 0 0 10px 10px;
 }
-
-.kartatext h3 {
-	text-align: center;
-}
 /* ------------------------ NÁŠ PŘÍSTUP sekce --------------------------------- */
-
-.kontejner .bily {
-	background-color: white; 
-}
-
-
-.kontejnerbily .box {
-	/* display: flex;
-	justify-content: space-between; */
-	max-width: 1100px;	
-	margin: 80px auto;
-}
-
-.welcome .box {
+.kontejner.raspberries {
 	background-color: white;
+
+}
+
+.kontejner.raspberries .box {
 	display: flex;
-	padding: 0;
 }
 
-.sloupec {
+.kontejnerbily {
+	/* background-color: lightpink; */
+	display: flex;
+	margin: 0;
+}
+
+.boxdole {
+	display: flex;
+	justify-content: space-between;
+	width: 1100px;	
+	margin: auto;
+}
+
+.levysloupecdole {
+	/* background-color: white; */
+	margin: 80px 0px 80px auto;
+	order: 0;
+}
+
+.pravysloupecdole {
+	height: 100%;
+	padding-left: 30px;
+	padding-right:3px;
+	margin: 80px auto 80px 0;
 	flex-basis: 50%;
 }
-
-.pravy {
-	padding-left: 30px;
-	flex-basis: 50%;
-}
-
-.sloupec .pravy img {
-	padding: 5px 10px 0 0;
-	width: 100%;
-	display: block;
-}
-
-.levy {
-	padding-left: 30px;
-}
-
 /* -------------------------- PATICKA ------------------------- */
 .footer {
 	background-color: #303339;
