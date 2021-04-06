@@ -194,7 +194,7 @@ a:hover {
 	flex-basis: 100%;
 	flex-wrap: wrap;
 }
-.box {
+.box {  /* proč to mám tak uskočené ??? */
 	display: block;
 }
 
