@@ -131,7 +131,7 @@ a:hover {
 /* ------------------------ VÍTEJTE sekce --------------------------------- */
 
 .kontejner {
-	background-color: lightblue;
+	background-color:white;
 	padding: 80px 0px;
 }
 
@@ -145,44 +145,46 @@ a:hover {
 .welcome .box {
 	background-color: white;
 	display: flex;
-	padding-bottom: -5px;
 }
 
-.sloupec {
+/* .sloupec {
 	flex-basis: 50%;
-}
+} */
 
 .pravy {
-	padding: 0 0 0 30px;
 	flex-basis: 50%;
 }
 
- .sloupec .pravy img {   /* nemůžu se zbavit bílého okraje dole - zkoušela jsem to horem dolem*/
+.sloupec .pravy img {   /* nemůžu se zbavit bílého okraje dole - zkoušela jsem to horem dolem*/
 	/* padding: 5px 10px 0 0; */
 	width: 100%;
 	display: block;
 }
 
 .levy {
-	padding-left: 30px;
+	padding:0 30px 0 0px;
 	flex-basis: 50%;
+}
+
+.sloupec h2 {
+	padding-top: 30px;
 }
 .tlacitko {
 	background-color:#f195b2;
-	padding: 15px 40px;
+	padding: 0;
 	border-radius: 30px;
-	border-color: transparent;
+	border: none; /* může být none i když na tom nastavuju radius */
 	text-align: center;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
  .tlacitko a {  /* NEFUNGUJE, JAK MÁ... 
 	display: block; */
-	padding: 0;
+	padding: 15px 40px;
 	color: white;
 } 
 
-.tlacitko a:hover {  /*  tlačítko se nezabarvuje celé - PROČ ???? */
+.tlacitko a:hover {  /*  tlačítko se nezabarvuje celé - PROČ ???? - padding musí být na odkazu (nadřazeném prvku) a ne na tlačítku*/
 	background-color: #d2567d;
 	
 }
@@ -190,39 +192,39 @@ a:hover {
 .nabidka {
 	background-color: #f0f0f0;
 	/* width: 1100px;  */
-	display: flex;
-	flex-basis: 100%;
-	flex-wrap: wrap;
 }
 .box {  /* proč to mám tak uskočené ??? */
 	display: block;
+	padding-left: 20px;
 }
 
+.box h2 {
+	margin-top: 0;
+}
 /* .nabidka .text{
 	margin-left: 15px;
 }  */
 
 .nabidka .karta { /* proč se to nesmrskne k sobě? */
 	display: flex;
-	flex-direction: row;
-	flex-basis: 23%;
+	max-width: 1100px;
+	margin: 0 auto;
+	flex-basis: calc(100% - 30px);
 	justify-content: space-between;
 	align-items: flex-start;
 	/* box-shadow: 3px; */
-	flex-grow: 0;
-	flex-shrink: 1;
 	flex-wrap: nowrap;
+
 }
 .obsahkarty {
-	display:flex;
-	flex-wrap: wrap; 
+	/* display:flex; nepotřebuji flex, protože je vše pod sebou */
 	margin:0 15px;
+	flex-basis: 23%;
 }
 
 .obsahkarty img {
-	/* display: flex;
 	width: 100%;
-	flex-wrap: wrap; */
+	display: block;
 	border-radius: 10px 10px 0 0;
 }
 
@@ -238,41 +240,35 @@ a:hover {
 }
 /* ------------------------ NÁŠ PŘÍSTUP sekce --------------------------------- */
 
-.kontejner .bily {
-	background-color: white; 
+.dole {
+	background-color:white;
+	padding: 80px 0px;
 }
 
-
-.kontejnerbily .box {
-	/* display: flex;
-	justify-content: space-between; */
-	max-width: 1100px;	
-	margin: 80px auto;
-}
-
-.welcome .box {
-	background-color: white;
+.box {
 	display: flex;
-	padding: 0;
-}
-
-.sloupec {
-	flex-basis: 50%;
+	justify-content: space-between;
+	max-width: 1100px;	
+	margin: 0 auto;
 }
 
 .pravy {
-	padding-left: 30px;
-	flex-basis: 50%;
+	flex-basis: calc(50% - 30px);
 }
 
-.sloupec .pravy img {
-	padding: 5px 10px 0 0;
+ .sloupec .pravy img {   /* nemůžu se zbavit bílého okraje dole - zkoušela jsem to horem dolem*/
+	/* padding: 5px 10px 0 0; */
 	width: 100%;
 	display: block;
 }
 
 .levy {
-	padding-left: 30px;
+	padding:0 30px 0 30px;
+	flex-basis: 50%;
+}
+
+.sloupec h2 {
+	padding-top: 30px;
 }
 
 /* -------------------------- PATICKA ------------------------- */
